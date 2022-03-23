@@ -1,5 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { dataAnime } = require('../../../API/myanimelist/anime')
+const { detailAnime } = require('../../../API/myanimelist/detail')
 
 module.exports = {
     name: 'anime',
@@ -11,9 +12,10 @@ module.exports = {
         let anime = args[0];
         let cards = '';
         dataAnime(anime)
-            .then((e) => {
-                e.forEach((e, i) => {
-                    cards += `\`${i += 1}.\` [${e.judul}](${e.url})\n`
+            .then((ar) => {
+                ar.forEach((e, i) => {
+                    cards += `\`${i += 1}.\` [${e.judul}](${e.url})
+                    `
                 })
                 message.channel.send({ content: cards })
             })

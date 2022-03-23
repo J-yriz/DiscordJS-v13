@@ -11,9 +11,7 @@ module.exports = {
             sinopsis: '',
             skor: '',
             rank: '',
-            adaption: '',
-            prequel: '',
-            other: '',
+            adaption: ''
         };
 
         $('#contentWrapper').children().map((i, elem) => {
@@ -21,8 +19,8 @@ module.exports = {
             dataAnime.sinopsis = $(elem).find('div.rightside.js-scrollfix-bottom-rel td p[itemprop="description"]').text().trim().replace("\n", "").replace("\n", "").replace("[Written by MAL Rewrite]", ""),
             dataAnime.skor = $(elem).find('div.score-label').text(),
             dataAnime.rank = $(elem).find('span.numbers.ranked strong').text().replace("#", "")
-
+            dataAnime.adaption = $(elem).find(' td.borderClass a').attr('href')
         })
-        console.log(dataAnime)
+        return dataAnime;
     },
 };
