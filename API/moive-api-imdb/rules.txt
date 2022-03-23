@@ -1,0 +1,4 @@
+u can change the api key
+
+you must visit the website omdb api
+http://www.omdbapi.com/apikey.aspx
