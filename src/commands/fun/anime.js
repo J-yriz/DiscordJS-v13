@@ -8,10 +8,10 @@ module.exports = {
     userPerms: [],
     botPerms: [],
     run: async (message, channel, args, { prefix }) => {
-        let anime = args[0]
+        let anime = args[0];
+        let cards = '';
         dataAnime(anime)
             .then((e) => {
-                let cards = '';
                 e.forEach((e, i) => {
                     cards += `\`${i += 1}.\` [${e.judul}](${e.url})\n`
                 })

@@ -7,15 +7,21 @@ module.exports = {
         const $ = cheerio.load(body);
         
         let dataAnime = {
-            judul: '',
             gambar: '',
-            sinopsis: ''
+            sinopsis: '',
+            skor: '',
+            rank: '',
+            adaption: '',
+            prequel: '',
+            other: '',
         };
 
         $('#contentWrapper').children().map((i, elem) => {
-            dataAnime.judul = $(elem).find('h1.title-name.h1_bold_none strong').text().trim(),
             dataAnime.gambar = $(elem).find('img.lazyloaded').attr('src'),
-            dataAnime.sinopsis = $(elem).find('div.rightside.js-scrollfix-bottom-rel td p[itemprop="description"]').text().trim()
+            dataAnime.sinopsis = $(elem).find('div.rightside.js-scrollfix-bottom-rel td p[itemprop="description"]').text().trim().replace("\n", "").replace("\n", "").replace("[Written by MAL Rewrite]", ""),
+            dataAnime.skor = $(elem).find('div.score-label').text(),
+            dataAnime.rank = $(elem).find('span.numbers.ranked strong').text().replace("#", "")
+
         })
         console.log(dataAnime)
     },
