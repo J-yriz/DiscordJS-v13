@@ -13,7 +13,6 @@ module.exports = {
             message.channel.send({ embeds: [embed] })
         } else {
             let user = message.mentions.users.first() || message.author;
-            console.log(user)
             if (!user) {
                 message.channel.send('Tidak ada user')
             } else {
