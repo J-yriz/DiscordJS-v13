@@ -11,7 +11,7 @@ const client = new Client({
 			type: "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING
 			url: "" // u can paste some link if u use type STREAMING
 		}]
-	}
+	},
 });
 
 module.exports = {
