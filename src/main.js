@@ -5,8 +5,7 @@ const client = new Client({
 	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS],
 	presence: {
 		status: "idle", // "online" "idle" "dnd" "invisible"
-		afk: false,
-		activities: [{ 
+		activities: [{
 			name: "Alone", 
 			type: "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING
 			url: "" // u can paste some link if u use type STREAMING
