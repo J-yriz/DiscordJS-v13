@@ -24,8 +24,8 @@ client.on('ready', () => {
 
 	client.user.setPresence(
 		{
-			activities: [{ 
-				name: 'Alone', 
+			activities: [{
+				name: 'Alone',
 				type: 'LISTENING', // PLAYING, WATCHING, LISTENING, STREAMING
 				url: '' // u can paste some link if u use type STREAMING
 			}],

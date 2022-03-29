@@ -59,7 +59,7 @@ module.exports = {
                         ctx.fillText(`pengikut`, 448, 130)
                     }
                     if (data.posting.length < 3) {
-                        ctx.fillText(`diikuti`, 550, 130)
+                        ctx.fillText(`diikuti`, 555, 130)
                     } else if (data.posting.length <= 5) {
                         ctx.fillText(`diikuti`, 570, 130)
                     }
