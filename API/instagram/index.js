@@ -6,7 +6,7 @@ module.exports = {
         const dataParse = JSON.parse(body);
 
         if (Object.keys(dataParse).length === 0) {
-            return "not found";
+            return 'error'
         } else {
             const ig = dataParse.graphql.user;
             let data = {
@@ -18,7 +18,7 @@ module.exports = {
                 followed: ig.edge_follow.count.toString(),
                 profile: ig.profile_pic_url,
                 profileHD: ig.profile_pic_url_hd,
-                posting: ig.edge_owner_to_timeline_media.count.toString()
+                posting: ig.edge_owner_to_timeline_media.count.toString(),
             }
 
             if (data.follower.length > 3) {

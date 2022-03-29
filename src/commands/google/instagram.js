@@ -24,7 +24,15 @@ module.exports = {
                             .setColor('RANDOM')
                         message.channel.send({ embeds: [embed] })
                     } else {
-                        message.channel.send({ files: ['src/commands/google/image.png'] })
+                        let embed = new MessageEmbed()
+                            .setDescription(`
+                            [**${args[0]}**](https://www.instagram.com/${args[0]}/)
+                            
+                            Jika terdapat bug / kesalahan pada gambar di bawah ini, silahkan hubungi developer bot ini.
+                            \`Jariz-chan#7706 || Jariz#7706\`
+                            `)
+                            .setColor('RANDOM')
+                        message.channel.send({ embeds: [embed], files: ['src/commands/google/image.png'] })
                     }
                 }
             })

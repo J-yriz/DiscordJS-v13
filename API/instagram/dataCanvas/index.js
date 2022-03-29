@@ -10,7 +10,7 @@ module.exports = {
 
         return dataProfile(nama)
             .then((data) => {
-                if (data === 'not found') {
+                if (data === 'error') {
                     return 'error'
                 } else {
                     registerFont('Font/Segoe-UI/Segoe-UI.ttf', { family: 'Segoe UI' })
