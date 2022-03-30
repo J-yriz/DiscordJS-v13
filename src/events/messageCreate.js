@@ -5,7 +5,7 @@ const { MessageEmbed } = require('discord.js');
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return; // berfungsi ketika menggunakan prefix di depan command
-  if (!message.guild) return; // command dapat berfungsi untuk DM member
+  if (!message.guild) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
