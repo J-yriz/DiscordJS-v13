@@ -22,7 +22,7 @@ module.exports = {
 
         $('#contentWrapper').children().map((i, elem) => {
             dataAnime.gambar = $('div.leftside a img').data('src'),
-            dataAnime.sinopsis = $(elem).find('div.rightside.js-scrollfix-bottom-rel td p[itemprop="description"]').text().trim().replace("\n", "").replace("\n", "").replace("[Written by MAL Rewrite]", ""),
+            dataAnime.sinopsis = $(elem).find('div.rightside.js-scrollfix-bottom-rel td p[itemprop="description"]').text().trim().replace("\n", "").replace("\n", ""),
             dataAnime.skor = $(elem).find('div.score-label').text(),
             dataAnime.rank = $(elem).find('span.numbers.ranked strong').text().replace("#", "")
             dataAnime.adaption = $(elem).find('td.borderClass a').attr('href')
