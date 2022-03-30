@@ -48,23 +48,28 @@ module.exports = {
                     ctx.fillStyle = "#e5e3df";
                     ctx.font = "17px 'Segoe UI'";
                     ctx.textAlign = "left";
-                    if (data.posting.length < 3) {
-                        ctx.fillText(`kiriman`, 308, 130)
+                    if (data.posting.length <= 3) {
+                        ctx.fillText(`kiriman`, 318, 130)
                     } else if (data.posting.length <= 5) {
                         ctx.fillText(`kiriman`, 328, 130)
                     }
-                    if (data.posting.length < 3) {
-                        ctx.fillText(`pengikut`, 428, 130)
+                    if (data.posting.length <= 3) {
+                        ctx.fillText(`pengikut`, 438, 130)
                     } else if (data.posting.length <= 5) {
                         ctx.fillText(`pengikut`, 448, 130)
                     }
-                    if (data.posting.length < 3) {
-                        ctx.fillText(`diikuti`, 555, 130)
+                    if (data.posting.length <= 3) {
+                        ctx.fillText(`diikuti`, 565, 130)
                     } else if (data.posting.length <= 5) {
                         ctx.fillText(`diikuti`, 570, 130)
                     }
 
-                    ctx.fillText(data.bio, 289, 195)
+                    if (data.bio.length >= 70) {
+                        ctx.fillText(data.bio.slice(0, 70), 289, 195)
+                        if (data.bio.length >= 70) {
+                            ctx.fillText(data.bio.slice(70, data.bio.length), 289, 215)
+                        }
+                    }
 
                     loadImage('./API/instagram/dataCanvas/placeProfile.png')
                         .then((image) => {
@@ -81,7 +86,7 @@ module.exports = {
                                     ctx.drawImage(img, 55, 30)
 
                                     const buffer = canvas.toBuffer("image/png");
-                                    fs.writeFileSync("src/commands/google/image.png", buffer);
+                                    fs.writeFileSync("src/commands/google/image.png", buffer)
                                 })
                         })
 
