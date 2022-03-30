@@ -1,7 +1,7 @@
 const { readdirSync } = require('fs');
 const ascii = require('ascii-table');
-let table = new ascii('Commands');
-table.setHeading('Commands', 'Load', 'Folders');
+let table = new ascii('Commands Failed');
+table.setHeading('Commands', 'Folders');
 
 module.exports = (client) => {
     readdirSync('src/commands/').forEach(dir => {
@@ -10,14 +10,14 @@ module.exports = (client) => {
             let pull = require(`../commands/${dir}/${file}`);
             if(pull.name) {
                 client.commands.set(pull.name, pull);
-                table.addRow(file, `Succses`, capFirst(dir))
             } else {
-                table.addRow(file, `Failed`, capFirst(dir))
+                table.addRow(file, capFirst(dir))
+                // console.log(`${file} failed to load in ${dir}`);
+                console.log(table.toString());
                 continue;
             } if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name))
         }
     })
-    console.log(table.toString());
     readdirSync(`src/events/`).forEach((file) => {
         const events = readdirSync(`src/events/`).filter((file) => file.endsWith('.js'));
         for(let file of events) {
