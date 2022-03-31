@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { dataManga } = require('../../../API/myanimelist/manga')
-const { detailManga } = require('../../../API/myanimelist/detailManga')
+const { detailAnime } = require('../../../API/myanimelist/detail')
 const translate = require('@vitalets/google-translate-api')
 
 module.exports = {
@@ -56,7 +56,7 @@ module.exports = {
                             await message.channel.send('Tolong berikan nomer yang ada di list.')
                         } else {
                             let numberSel = SelNumberMSG.content - 1
-                            detailManga(ar[numberSel].url)
+                            detailAnime(ar[numberSel].url)
                                 .then(async (e) => {
                                     let ea
                                     if (e.sinopsis !== 'Tidak di ketahui' || e.sinopsis !== undefined) {
@@ -73,7 +73,7 @@ module.exports = {
                                         .addFields(
                                             { name: 'Genre', value: e.genre, inline: true },
                                             { name: 'Peringkat', value: e.rank, inline: true },
-                                            { name: 'Chapter', value: e.chp, inline: true },
+                                            { name: 'Chapter', value: e.eps, inline: true },
                                             { name: 'Type', value: e.type, inline: true },
                                             { name: 'Season', value: e.season, inline: true },
                                             { name: 'Studio', value: e.studio, inline: true },

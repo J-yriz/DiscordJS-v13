@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { dataAnime } = require('../../../API/myanimelist/anime')
-const { detailAnime } = require('../../../API/myanimelist/detailAnime')
+const { detailAnime } = require('../../../API/myanimelist/detail')
 const translate = require('@vitalets/google-translate-api')
 
 module.exports = {
