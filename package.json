@@ -17,6 +17,7 @@
   "dependencies": {
     "@vitalets/google-translate-api": "^8.0.0",
     "ascii-table": "^0.0.9",
+    "brainly-scraper": "^1.0.3",
     "canvas": "^2.9.1",
     "cheerio": "^1.0.0-rc.10",
     "discord.js": "^13.6.0",
